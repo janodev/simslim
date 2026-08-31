@@ -1,0 +1,7 @@
+swift-simslim is a Swift port of SimSlim.
+
+The original SimSlim project is Copyright (c) 2026 Interlap and is available
+at https://github.com/MobAI-App/simslim under the MIT License reproduced in
+LICENSE.
+
+This port began from upstream commit d8adb4508452c92d36db8ef8a281ac68c38108bd.
