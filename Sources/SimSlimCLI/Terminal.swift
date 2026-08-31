@@ -29,3 +29,19 @@ struct RawTerminal {
         tcsetattr(descriptor, TCSAFLUSH, &state)
     }
 }
+
+func terminalRows(_ descriptor: Int32 = STDIN_FILENO) -> Int {
+    var size = winsize()
+    guard ioctl(descriptor, TIOCGWINSZ, &size) == 0, size.ws_row >= 6 else {
+        return 24
+    }
+    return Int(size.ws_row)
+}
+
+func terminalColumns(_ descriptor: Int32 = STDOUT_FILENO) -> Int {
+    var size = winsize()
+    guard ioctl(descriptor, TIOCGWINSZ, &size) == 0, size.ws_col > 0 else {
+        return 80
+    }
+    return Int(size.ws_col)
+}
