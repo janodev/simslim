@@ -19,7 +19,46 @@ The upstream SwiftUI app is not part of this port.
 SimSlim controls Simulator through `xcrun simctl`; it does not modify the host
 Mac's `launchd` state or a shared iOS runtime.
 
-## Build and test
+## Install with Homebrew
+
+Yes, a private repository can be a Homebrew tap. Homebrew accepts an explicit
+Git remote for a tap, and Git supplies the authentication. Every machine or CI
+runner installing this formula needs an SSH key with read access to the private
+repository.
+
+Verify access, add this repository as a custom tap, and install its formula:
+
+```sh
+git ls-remote ssh://git@github.com/janodev/swift-simslim.git HEAD
+brew tap janodev/swift-simslim ssh://git@github.com/janodev/swift-simslim.git
+brew install janodev/swift-simslim/simslim
+```
+
+The explicit remote is required. The shorter
+`brew tap janodev/swift-simslim` command would look for a different repository
+named `janodev/homebrew-swift-simslim`.
+
+If the public MobAI Go formula is already installed, remove it before installing
+this private Swift formula because both provide the `simslim` executable:
+
+```sh
+brew uninstall mobai-app/tap/simslim
+brew install janodev/swift-simslim/simslim
+```
+
+The formula builds from the pinned private Git revision rather than a public
+archive. Normal Homebrew updates then apply:
+
+```sh
+brew update
+brew upgrade janodev/swift-simslim/simslim
+```
+
+See Homebrew's [tap documentation](https://docs.brew.sh/Taps) and GitHub's
+[SSH authentication guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+for the underlying authentication model.
+
+## Build and test from source
 
 ```sh
 git clone git@github.com:janodev/swift-simslim.git
@@ -41,10 +80,6 @@ Install that build in a user-owned directory on `PATH` if desired:
 install -d "$HOME/.local/bin"
 install -m 0755 .build/release/simslim "$HOME/.local/bin/simslim"
 ```
-
-This repository does not currently publish its own Homebrew formula; a
-Homebrew-installed `simslim` may still be the upstream Go executable. Use an
-explicit path when comparing the two implementations.
 
 The package exposes `SimSlimCore` for Swift callers and the `simslim` command
 for shell workflows. External commands are executed through

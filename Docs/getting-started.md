@@ -11,7 +11,37 @@ The package targets macOS 27 or newer and Swift 6.2 or newer. Xcode must be
 installed with an iOS Simulator runtime because every device operation is
 routed through `xcrun simctl`.
 
-# Build
+# Homebrew installation
+
+This private repository also acts as a custom Homebrew tap. Git authentication
+must already grant the current machine or CI runner read access through SSH:
+
+```sh
+git ls-remote ssh://git@github.com/janodev/swift-simslim.git HEAD
+brew tap janodev/swift-simslim ssh://git@github.com/janodev/swift-simslim.git
+brew install janodev/swift-simslim/simslim
+```
+
+The two-argument `brew tap` form is required because this repository is not
+named `homebrew-swift-simslim`. The fully qualified install also selects this
+private formula instead of the public MobAI formula with the same name.
+
+If that public formula is already installed, replace it explicitly:
+
+```sh
+brew uninstall mobai-app/tap/simslim
+brew install janodev/swift-simslim/simslim
+```
+
+The formula fetches a pinned revision over authenticated Git and builds the
+release executable with SwiftPM. Update it with:
+
+```sh
+brew update
+brew upgrade janodev/swift-simslim/simslim
+```
+
+# Build from a source checkout
 
 From the repository root:
 
@@ -34,9 +64,8 @@ install -d "$HOME/.local/bin"
 install -m 0755 .build/release/simslim "$HOME/.local/bin/simslim"
 ```
 
-There is no Homebrew formula for this native port at the pinned baseline. A
-Homebrew-installed `simslim` may be the upstream Go executable, so invoke
-`.build/release/simslim` explicitly during parity checks.
+During parity checks, use `.build/release/simslim` explicitly so an installed
+public Go formula cannot be selected accidentally.
 
 The SwiftPM products are:
 

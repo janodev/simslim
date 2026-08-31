@@ -87,9 +87,10 @@ found during review:
   under upstream `gui/` is not included.
 - The package deliberately targets macOS 27 or newer, while the upstream Go
   project has a broader historical macOS build surface.
-- This repository does not claim to replace the published upstream Homebrew
-  formula. Until a release/package workflow is added, build or install the
-  executable from this repository explicitly.
+- The private formula in [`Formula/simslim.rb`](../Formula/simslim.rb) is
+  independent of the published upstream Homebrew formula. It builds a pinned
+  Swift revision from an authenticated Git checkout; it does not replace or
+  update the public MobAI tap.
 - Simulator service labels are Apple-internal implementation details. Parity
   with a pinned commit does not guarantee compatibility with a later iOS
   runtime.
