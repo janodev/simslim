@@ -17,20 +17,20 @@ This private repository also acts as a custom Homebrew tap. Git authentication
 must already grant the current machine or CI runner read access through SSH:
 
 ```sh
-git ls-remote ssh://git@github.com/janodev/swift-simslim.git HEAD
-brew tap janodev/swift-simslim ssh://git@github.com/janodev/swift-simslim.git
-brew install janodev/swift-simslim/simslim
+git ls-remote ssh://git@github.com/janodev/simslim.git HEAD
+brew tap janodev/simslim ssh://git@github.com/janodev/simslim.git
+brew install janodev/simslim/simslim
 ```
 
 The two-argument `brew tap` form is required because this repository is not
-named `homebrew-swift-simslim`. The fully qualified install also selects this
+named `homebrew-simslim`. The fully qualified install also selects this
 private formula instead of the public MobAI formula with the same name.
 
 If that public formula is already installed, replace it explicitly:
 
 ```sh
 brew uninstall mobai-app/tap/simslim
-brew install janodev/swift-simslim/simslim
+brew install janodev/simslim/simslim
 ```
 
 The formula fetches a pinned revision over authenticated Git and builds the
@@ -38,7 +38,7 @@ release executable with SwiftPM. Update it with:
 
 ```sh
 brew update
-brew upgrade janodev/swift-simslim/simslim
+brew upgrade janodev/simslim/simslim
 ```
 
 # Build from a source checkout

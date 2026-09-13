@@ -1,4 +1,4 @@
-# swift-simslim
+# SimSlim
 
 A native Swift port of [MobAI SimSlim](https://github.com/MobAI-App/simslim).
 It reduces the idle cost of an iOS Simulator by recording persistent,
@@ -29,21 +29,21 @@ repository.
 Verify access, add this repository as a custom tap, and install its formula:
 
 ```sh
-git ls-remote ssh://git@github.com/janodev/swift-simslim.git HEAD
-brew tap janodev/swift-simslim ssh://git@github.com/janodev/swift-simslim.git
-brew install janodev/swift-simslim/simslim
+git ls-remote ssh://git@github.com/janodev/simslim.git HEAD
+brew tap janodev/simslim ssh://git@github.com/janodev/simslim.git
+brew install janodev/simslim/simslim
 ```
 
 The explicit remote is required. The shorter
-`brew tap janodev/swift-simslim` command would look for a different repository
-named `janodev/homebrew-swift-simslim`.
+`brew tap janodev/simslim` command would look for a different repository named
+`janodev/homebrew-simslim`.
 
 If the public MobAI Go formula is already installed, remove it before installing
 this private Swift formula because both provide the `simslim` executable:
 
 ```sh
 brew uninstall mobai-app/tap/simslim
-brew install janodev/swift-simslim/simslim
+brew install janodev/simslim/simslim
 ```
 
 The formula builds from the pinned private Git revision rather than a public
@@ -51,7 +51,7 @@ archive. Normal Homebrew updates then apply:
 
 ```sh
 brew update
-brew upgrade janodev/swift-simslim/simslim
+brew upgrade janodev/simslim/simslim
 ```
 
 See Homebrew's [tap documentation](https://docs.brew.sh/Taps) and GitHub's
@@ -61,8 +61,8 @@ for the underlying authentication model.
 ## Build and test from source
 
 ```sh
-git clone git@github.com:janodev/swift-simslim.git
-cd swift-simslim
+git clone git@github.com:janodev/simslim.git
+cd simslim
 make build
 make test
 ```
