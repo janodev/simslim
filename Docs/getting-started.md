@@ -60,8 +60,8 @@ swift build -c release --product simslim
 Optionally install the result into a user-owned directory already on `PATH`:
 
 ```sh
-install -d "$HOME/.local/bin"
-install -m 0755 .build/release/simslim "$HOME/.local/bin/simslim"
+install -d "$HOME/Developer/tools"
+install -m 0755 .build/release/simslim "$HOME/Developer/tools/simslim"
 ```
 
 During parity checks, use `.build/release/simslim` explicitly so an installed

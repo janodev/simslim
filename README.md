@@ -77,8 +77,8 @@ swift build -c release --product simslim
 Install that build in a user-owned directory on `PATH` if desired:
 
 ```sh
-install -d "$HOME/.local/bin"
-install -m 0755 .build/release/simslim "$HOME/.local/bin/simslim"
+install -d "$HOME/Developer/tools"
+install -m 0755 .build/release/simslim "$HOME/Developer/tools/simslim"
 ```
 
 The package exposes `SimSlimCore` for Swift callers and the `simslim` command
