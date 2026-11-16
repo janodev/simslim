@@ -1,11 +1,10 @@
 # SimSlim
 
-A native Swift port of [MobAI SimSlim](https://github.com/MobAI-App/simslim).
 It reduces the idle cost of an iOS Simulator by recording persistent,
 per-device `launchd` overrides for background services that development and CI
 workflows do not need.
 
-This repository ports the Go library and CLI as a SwiftPM library plus a native
+This is a native Swift port of [MobAI SimSlim](https://github.com/MobAI-App/simslim). This repository ports the Go library and CLI as a SwiftPM library plus a native
 `simslim` executable. The behavioral baseline is upstream commit
 [`d8adb45`](https://github.com/MobAI-App/simslim/commit/d8adb4508452c92d36db8ef8a281ac68c38108bd).
 The upstream SwiftUI app is not part of this port.
