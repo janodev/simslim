@@ -1,15 +1,16 @@
 # SimSlim
 
-These projects work together to coordinate coding agents on one Mac:
+Run multiple coding agents on one Mac with less resource contention, lighter
+simulators, and less disk clutter. Competing builds and desktop UI tests take
+turns while independent work continues in parallel.
 
-- [AgentBuild](https://github.com/janodev/agentbuild) orchestrates project builds and tests, reuses caches, and saves execution evidence.
-- [AgentLease](https://github.com/janodev/agentlease) coordinates shared and exclusive access to named resources.
-- [SimLease](https://github.com/janodev/simlease) provides disposable Simulator sessions and exclusive macOS UI access.
-- [SimSlim](https://github.com/janodev/simslim) reduces Simulator overhead by disabling unneeded background services.
+- [AgentBuild](https://github.com/janodev/agentbuild) coordinates builds and tests, reuses build caches, and records results.
+- [AgentLease](https://github.com/janodev/agentlease) makes commands wait their turn for shared resources, preventing conflicting work.
+- [SimLease](https://github.com/janodev/simlease) gives each workflow a disposable simulator, deletes it afterward, and queues macOS UI automation.
+- [SimSlim](https://github.com/janodev/simslim) reduces Simulator memory use and can reclaim disk space from selected Simulator caches, logs, and temporary files on request.
 
-AgentBuild uses AgentLease for shared build resources and SimLease for Simulator
-and macOS UI workflows. Selected Simulator routes also apply SimSlim to their
-leased device. AgentLease, SimLease, and SimSlim can each be used independently.
+AgentBuild brings these tools into its managed workflows, applying SimSlim on
+selected Simulator routes. AgentLease, SimLease, and SimSlim also work independently.
 
 ---
 
