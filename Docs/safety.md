@@ -1,3 +1,10 @@
+---
+type: Safety Reference
+title: Safety, cloning, and disk cleanup
+description: Defines mutation boundaries, clone independence checks, permanent cleanup behavior, and recovery expectations.
+tags: [simulator, safety, clone, disk, cleanup]
+---
+
 # Safety boundaries
 
 SimSlim accepts one exact simulator UDID for mutation. It resolves that UDID

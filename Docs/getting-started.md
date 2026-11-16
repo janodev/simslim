@@ -1,3 +1,10 @@
+---
+type: User Guide
+title: Getting started
+description: Builds and operates the native Swift SimSlim CLI safely in local and automated simulator workflows.
+tags: [swift, simulator, cli, profiles, testing]
+---
+
 # Requirements
 
 The package targets macOS 27 or newer and Swift 6.2 or newer. Xcode must be

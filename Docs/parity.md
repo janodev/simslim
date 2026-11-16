@@ -1,3 +1,10 @@
+---
+type: Porting Reference
+title: Port baseline and parity
+description: Records the exact Go baseline, native Swift scope, compatibility goals, known exclusions, and review method.
+tags: [swift, go, parity, provenance, maintenance]
+---
+
 # Source baseline
 
 The native port began from MobAI SimSlim commit:
