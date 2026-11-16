@@ -1,10 +1,3 @@
----
-type: Architecture Reference
-title: Architecture and launchd mechanism
-description: Explains the native Swift design and how verified per-simulator launchd overrides prevent selected background services from starting.
-tags: [swift, simulator, launchd, subprocess, concurrency]
----
-
 # Outcome
 
 SimSlim does not kill arbitrary processes, remove daemon definitions, or patch
