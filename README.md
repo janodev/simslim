@@ -1,5 +1,17 @@
 # SimSlim
 
+A native Swift port of [MobAI SimSlim](https://github.com/MobAI-App/simslim).
+It reduces the idle cost of an iOS Simulator by recording persistent,
+per-device `launchd` overrides for background services that development and CI
+workflows do not need.
+
+This repository ports the Go library and CLI as a SwiftPM library plus a native
+`simslim` executable. The behavioral baseline is upstream commit
+[`d8adb45`](https://github.com/MobAI-App/simslim/commit/d8adb4508452c92d36db8ef8a281ac68c38108bd).
+The upstream SwiftUI app is not part of this port.
+
+## Companion tools
+
 Run multiple coding agents on one Mac with less resource contention, lighter
 simulators, and less disk clutter. Competing builds and desktop UI tests take
 turns while independent work continues in parallel.
@@ -11,18 +23,6 @@ turns while independent work continues in parallel.
 
 AgentLease, SimLease, and SimSlim work independently. AgentBuild is a build driver
 that runs supported project workflows and coordinates the other tools as needed.
-
----
-
-A native Swift port of [MobAI SimSlim](https://github.com/MobAI-App/simslim).
-It reduces the idle cost of an iOS Simulator by recording persistent,
-per-device `launchd` overrides for background services that development and CI
-workflows do not need.
-
-This repository ports the Go library and CLI as a SwiftPM library plus a native
-`simslim` executable. The behavioral baseline is upstream commit
-[`d8adb45`](https://github.com/MobAI-App/simslim/commit/d8adb4508452c92d36db8ef8a281ac68c38108bd).
-The upstream SwiftUI app is not part of this port.
 
 ## Requirements
 
